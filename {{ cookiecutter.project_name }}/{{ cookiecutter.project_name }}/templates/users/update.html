@@ -1,0 +1,28 @@
+{% raw %}{% extends 'base.html' %}
+{% block title %}update {{ object }}{% endblock title %}
+{% block content %}
+  <h1>update {{ object }}</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <p>{{ form.username.label }}</p>
+    <p>{{ form.username.errors }}</p>
+    <p>{{ form.username }}</p>
+
+    <p>{{ form.first_name.label }}</p>
+    <p>{{ form.first_name.errors }}</p>
+    <p>{{ form.first_name }}</p>
+
+    <p>{{ form.last_name.label }}</p>
+    <p>{{ form.last_name.errors }}</p>
+    <p>{{ form.last_name }}</p>
+
+    <p>{{ form.email.label }}</p>
+    <p>{{ form.email.errors }}</p>
+    <p>{{ form.email }}</p>
+
+    <input type="submit" value="Save changes">
+  </form>
+{% endblock content %}
+{% endraw %}

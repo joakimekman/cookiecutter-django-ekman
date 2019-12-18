@@ -1,0 +1,36 @@
+{% raw %}{% extends 'base.html' %}
+{% block title %}register{% endblock title %}
+{% block content %}
+  <h1>REGISTER</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <p>{{ form.username.label }}</p>
+    <p>{{ form.username.errors }}</p>
+    <p>{{ form.username }}</p>
+
+    <p>{{ form.first_name.label }}</p>
+    <p>{{ form.first_name.errors }}</p>
+    <p>{{ form.first_name }}</p>
+
+    <p>{{ form.last_name.label }}</p>
+    <p>{{ form.last_name.errors }}</p>
+    <p>{{ form.last_name }}</p>
+
+    <p>{{ form.email.label }}</p>
+    <p>{{ form.email.errors }}</p>
+    <p>{{ form.email }}</p>
+
+    <p>{{ form.password1.label }}</p>
+    <p>{{ form.password1.errors }}</p>
+    <p>{{ form.password1 }}</p>
+
+    <p>{{ form.password2.label }}</p>
+    <p>{{ form.password2.errors }}</p>
+    <p>{{ form.password2 }}</p>
+
+    <input type="submit" value="register">
+  </form>
+{% endblock content %}
+{% endraw %}

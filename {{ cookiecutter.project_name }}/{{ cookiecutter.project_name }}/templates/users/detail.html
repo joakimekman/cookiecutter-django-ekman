@@ -1,0 +1,20 @@
+{% raw %}{% extends 'base.html' %}
+{% block title %}{{ object }}{% endblock title %}
+{% block content %}
+  <h1>{{ object }}</h1>
+  <ul>
+    <li><strong>first name:</strong> {{ object.first_name }}</li>
+    <li><strong>last name:</strong> {{ object.last_name }}</li>
+    <li><strong>email:</strong> {{ object.email }}</li>
+  </ul>
+
+  {% if request.user == object %}
+    <hr>
+    <ul>
+      <li><a href="{% url 'user:password_change' object %}">change password</a></li>
+      <li><a href="{% url 'user:update_account' object %}">update account</a></li>
+      <li><a href="{% url 'user:delete_account' object %}">delete account</a></li>
+    </ul>
+  {% endif %}
+{% endblock content %}
+{% endraw %}

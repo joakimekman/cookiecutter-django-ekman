@@ -1,0 +1,14 @@
+{% raw %}{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+  <h1>LOGIN</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="login">
+  </form>
+  <hr>
+  <a href="{% url 'user:register' %}">register</a> | 
+  <a href="{% url 'password_reset' %}">reset password</a>
+{% endblock content %}
+{% endraw %}
